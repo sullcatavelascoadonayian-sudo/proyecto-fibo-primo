@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Web: Fibonacci y Números Primos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Matemáticas Aplicadas</h1>
+        <p class="subtitle">Modelado de Sistemas Complejos mediante Lógica Discreta</p>
+        <div class="meta-info">
+            <p><strong>Estudiante:</strong> Adonay Sullcata | <strong>Curso:</strong> Desarrollo Web</p>
+        </div>
+        
+        <nav class="nav-menu">
+            <button class="nav-btn active" onclick="navegarA('inicio')">Inicio</button>
+            <button class="nav-btn" onclick="navegarA('prob1')">1. Solo Fibonacci</button>
+            <button class="nav-btn" onclick="navegarA('prob2')">2. Solo Primos</button>
+            <button class="nav-btn" onclick="navegarA('prob3')">3. Ambos Combinados</button>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section id="page-inicio" class="página active">
+            <div class="card text-card">
+                <h2>Introducción al Proyecto</h2>
+                <p>Esta plataforma interactiva demuestra la utilidad práctica de la matemática discreta. A través de algoritmos optimizados y estructurados en tres módulos independientes, analizamos el comportamiento analítico de las secuencias numéricas y las propiedades de la divisibilidad aplicadas a problemas contemporáneos de la ingeniería, la ecología y las finanzas.</p>
+                <div class="info-box-general">
+                    <h3>Arquitectura Lógica del Sistema:</h3>
+                    <ul>
+                        <li><strong>Módulo de Progresión (Página 1):</strong> Análisis puro de la Sucesión de Fibonacci enfocado en economías de escala y esquemas de ahorro adaptativo.</li>
+                        <li><strong>Módulo de Primalidad (Página 2):</strong> Algoritmos de validación basados en Números Primos aplicados a la planificación de mantenimiento logístico.</li>
+                        <li><strong>Módulo de Intersección (Página 3):</strong> Fusión estricta de ambos conceptos para la detección de anomalías y mutaciones en sistemas de crecimiento acelerado.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="page-prob1" class="página">
+            <div class="card">
+                <span class="badge badge-fib">Sucesión Pura de Fibonacci</span>
+                <h2>Ahorro Progresivo Adaptativo</h2>
+                <h3 class="problem-subtitle">
+                    Problema: Optimización de presupuestos estacionales bajo inflación y variabilidad de ingresos
+                </h3>
+                
+                <div class="context-section">
+                    <h3>Contexto del Mundo Real</h3>
+                    <p>En finanzas personales y corporativas, los planes de ahorro con cuotas estáticas no logran adaptarse a las dinámicas del mercado actual. Al implementar un modelo basado en la sucesión de Fibonacci, se genera una curva de aportes progresivos que emula los sistemas de crecimiento orgánico. Esto permite a las plataformas FinTech diseñar retos financieros dinámicos donde el esfuerzo de capitalización se incrementa de forma proporcional a la resistencia del flujo de caja del usuario, permitiendo acumular capital de forma acelerada durante ciclos óptimos de inversión.</p>
+                </div>
+
+                <div class="analysis-grid">
+                    <div class="analysis-box">
+                        <h4>Impacto de la Solución</h4>
+                        <p>Reduce la fricción psicológica del ahorro inicial fijando montos bajos que escalan orgánicamente a medida que el hábito financiero se consolida en el tiempo.</p>
+                    </div>
+                    <div class="analysis-box">
+                        <h4>Fundamento Matemático</h4>
+                        <p>Se rige bajo la relación de recurrencia lineal homogénea definida por:</p>
+                        <div class="formula-block">$$F_n = F_{n-1} + F_{n-2}$$</div>
+                        <p>donde los valores iniciales establecidos son $F_1 = 1, F_2 = 1$.</p>
+                    </div>
+                </div>
+
+                <div class="algorithm-section">
+                    <h3>Análisis Técnico del Algoritmo</h3>
+                    <p>El núcleo del sistema calcula el dinero a depositar cada mes sumando estrictamente las cantidades de los dos periodos inmediatamente anteriores. Para garantizar la máxima eficiencia computacional y reducir el impacto en la memoria del navegador, este código ha sido desarrollado utilizando <strong>intercambios iterativos de variables en tiempo de ejecución</strong>. Esto evita el uso innecesario de arreglos dinámicos u objetos vectoriales, cumpliendo con los estándares de optimización de algoritmos.</p>
+                </div>
+
+                <div class="form-container">
+                    <h3>Simulador Financiero Progresivo</h3>
+                    <form id="formAhorro" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="mesesAhorro">Indique el periodo de proyección de capital (en meses):</label>
+                            <input type="number" id="mesesAhorro" min="1" max="40" placeholder="Ej. 12" required>
+                        </div>
+                        <button type="button" class="btn-neon btn-fib" onclick="calcularSoloFibonacci()">Calcular Plan de Ahorro</button>
+                    </form>
+                </div>
+
+                <div class="resultado-box" id="resAhorro">
+                    <p class="placeholder-text">Introduzca los parámetros temporales para desplegar la proyección pura de Fibonacci.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="page-prob2" class="página">
+            <div class="card">
+                <span class="badge badge-sec">Números Primos Puros</span>
+                <h2>Optimización de Ciclos de Mantenimiento Logístico</h2>
+                <h3 class="problem-subtitle">
+                    Problema: Saturación y cuellos de botella en talleres de servicio por coincidencia de frecuencias temporales
+                </h3>
+                
+                <div class="context-section">
+                    <h3>Contexto del Mundo Real</h3>
+                    <p>En la gestión de cadenas de suministro y transporte multimodal, la programación de paradas de mantenimiento para flotas de camiones o maquinaria pesada suele generar colapsos logísticos si los intervalos coinciden con frecuencia. Si varias flotas operan con ciclos basados en números compuestos (como cada 4, 6 u 8 semanas), sus días de servicio se alinearán constantemente debido a los mínimos comunes múltiplos pequeños, abarrotando los talleres. Al auditar y seleccionar estratégicamente periodos basados en números primos, los ingenieros de operaciones distribuyen de manera uniforme las cargas de trabajo a lo largo del año, evitando la coincidencia destructiva de tareas.</p>
+                </div>
+
+                <div class="analysis-grid">
+                    <div class="analysis-box">
+                        <h4>Métricas de Operación</h4>
+                        <p>Maximiza la disponibilidad operativa de la flota y aplana la curva de demanda de repuestos y mano de obra técnica en los centros de servicio integrados.</p>
+                    </div>
+                    <div class="analysis-box">
+                        <h4>Definición de Conjunto</h4>
+                        <p>Un periodo de semanas $p > 1$ garantiza la máxima asincronía si cumple la restricción formal de primalidad:</p>
+                        <div class="formula-block">$$\forall d \in \mathbb{N} \quad (d \mid p \implies d = 1 \lor d = p)$$</div>
+                    </div>
+                </div>
+
+                <div class="algorithm-section">
+                    <h3>Análisis Técnico del Algoritmo</h3>
+                    <p>La evaluación se realiza mediante un análisis exhaustivo de divisibilidad por fuerza condicional. El sistema analiza el intervalo de semanas ingresado y ejecuta un ciclo iterativo que verifica el residuo de la división entera mediante el operador de módulo (<code>%</code>). El programa contabiliza con exactitud las divisiones exactas; el ciclo se aprueba como "intervalo óptimo asíncrono" si y solo si posee exactamente dos divisores positivos en el conjunto de los enteros, asegurando que no comparta múltiplos comunes simples con otras flotas.</p>
+                </div>
+
+                <div class="form-container">
+                    <h3>Analizador de Asincronía Logística</h3>
+                    <form id="formSeguridad" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="codigoSeguridad">Ingrese el intervalo de semanas propuesto para la flota:</label>
+                            <input type="number" id="codigoSeguridad" min="1" max="999999" placeholder="Ej. 17" required>
+                        </div>
+                        <button type="button" class="btn-neon btn-sec" onclick="calcularSoloPrimos()">Auditar Ciclo de Flota</button>
+                    </form>
+                </div>
+
+                <div class="resultado-box" id="resSeguridad">
+                    <p class="placeholder-text">Ingrese una frecuencia temporal para realizar la auditoría de mantenimiento.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="page-prob3" class="página">
+            <div class="card">
+                <span class="badge badge-bio">Fibonacci y Primos Combinados</span>
+                <h2>Modelado y Control de Poblaciones Ecológicas</h2>
+                <h3 class="problem-subtitle">
+                    Problema: Predicción de picos de inestabilidad mutacional en colonias bacterianas aisladas
+                </h3>
+                
+                <div class="context-section">
+                    <h3>Contexto del Mundo Real</h3>
+                    <p>En bioingeniería y ecología cuantitativa, el crecimiento reproductivo de ciertas colonias bacterianas y organismos sigue un patrón de expansión escalonado modelado por la secuencia de Fibonacci. Sin embargo, se ha descubierto que cuando la densidad de la población total coincide exactamente con un número primo, la colonia experimenta un fenómeno de inestabilidad genética o "mutación crítica" debido a la falta de factores de distribución simétrica en sus recursos. Este simulador intercepta ambas lógicas: proyecta la población orgánica a lo largo del tiempo y detecta de manera automatizada en qué ciclos específicos la colonia alcanzará un estado de alerta epidemiológica.</p>
+                </div>
+
+                <div class="analysis-grid">
+                    <div class="analysis-box">
+                        <h4>Mapeo de Intersección</h4>
+                        <p>Permite a los analistas biológicos anticipar colapsos biológicos o ventanas óptimas de muestreo molecular mediante la detección de números primos de Fibonacci ($F_n \in \mathbb{P}$).</p>
+                    </div>
+                    <div class="analysis-box">
+                        <h4>Complejidad del Sistema</h4>
+                        <p>Combina la naturaleza recursiva del crecimiento con las propiedades restrictivas de la divisibilidad no lineal:</p>
+                        <div class="formula-block">$$S_n = \{ F_n \mid \text{esPrimo}(F_n) \}$$</div>
+                    </div>
+                </div>
+
+                <div class="algorithm-section">
+                    <h3>Análisis Técnico del Algoritmo</h3>
+                    <p>Este módulo representa la fusión algorítmica integral del proyecto. El script ejecuta una estructura de bucle que calcula secuencialmente la serie matemática de Fibonacci para determinar el volumen de población en cada etapa generacional. De forma paralela y dentro del mismo ciclo iterativo, el valor obtenido es inyectado inmediatamente como parámetro en la criba booleana de primalidad. Esto permite mapear la coincidencia exacta de ambos conjuntos matemáticos sin romper la restricción de diseño de eficiencia en memoria.</p>
+                </div>
+
+                <div class="form-container">
+                    <h3>Simulador Ecosistémico de Intersección</h3>
+                    <form id="formCombinado" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="terminosCombinados">Indique la cantidad de etapas generacionales a simular:</label>
+                            <input type="number" id="terminosCombinados" min="1" max="40" placeholder="Ej. 15" required>
+                        </div>
+                        <button type="button" class="btn-neon btn-bio" onclick="calcularCombinado()">Generar y Detectar Primos</button>
+                    </form>
+                </div>
+
+                <div class="resultado-box" id="resCombinado">
+                    <p class="placeholder-text">Inicie la simulación para observar el cruce de ambas variables matemáticas en tiempo real.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="container">
+        <div class="card conclusion-card">
+            <h3>Conclusión Científica del Proyecto</h3>
+            <p>La implementación de soluciones interactivas demuestra que las estructuras lógicas abstractas de la matemática discreta rigen los sistemas operativos y los fenómenos tangibles de nuestro entorno. Mientras que la sucesión de Fibonacci nos permite comprender la optimización espacial y temporal del crecimiento, los números primos definen las barreras de la seguridad algorítmica contemporánea. El desarrollo de este entorno web unifica ambos pilares en un software interactivo, eficiente y de alta scannabilidad visual.</p>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/" target="_blank" class="link-neon">Repositorio Git</a>
+            <a href="#" target="_blank" class="link-neon">Página Publicada</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+/* Paleta de Colores Sólidos Neon (Diseño Mate - Sin resplandor / Sin Glow) */
+:root {
+    --bg-dark: #090b11;
+    --bg-card: #111522;
+    --bg-input: #181f33;
+    --text-white: #f0f4f9;
+    --text-gray: #7e8b9b;
+    
+    /* Colores temáticos planos de identificación */
+    --neon-cyan: #00f0ff;    /* Finanzas / Fibonacci */
+    --neon-purple: #b566ff;  /* Logística / Primos */
+    --neon-green: #00ff66;   /* Combinado / Redes Biológicas */
+    
+    --border-color: #222a3f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Portada / Encabezado */
+header {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    color: var(--text-gray);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.meta-info {
+    font-size: 0.95rem;
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+
+/* Menú Estilo Navbar */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background-color: var(--bg-input);
+    color: var(--text-gray);
+    border: 1px solid var(--border-color);
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    color: var(--text-white);
+    border-color: var(--text-gray);
+}
+
+.nav-btn.active {
+    background-color: var(--bg-dark);
+    color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+}
+
+/* Enrutador de páginas virtuales */
+.página {
+    display: none; 
+}
+
+.página.active {
+    display: block; 
+}
+
+/* Tarjetas (Cards) */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+/* Subtítulos de los Problemas Reales */
+.problem-subtitle {
+    font-size: 1rem !important;
+    margin-top: 0px !important;
+    margin-bottom: 20px !important;
+    font-style: italic;
+    font-weight: 500;
+    opacity: 0.85;
+}
+#page-prob1 .problem-subtitle { color: var(--neon-cyan); }
+#page-prob2 .problem-subtitle { color: var(--neon-purple); }
+#page-prob3 .problem-subtitle { color: var(--neon-green); }
+
+/* Etiquetas visuales (Badges) */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+.badge-fib { background: rgba(0, 240, 255, 0.15); color: var(--neon-cyan); }
+.badge-bio { background: rgba(0, 255, 102, 0.15); color: var(--neon-green); }
+.badge-sec { background: rgba(181, 102, 255, 0.15); color: var(--neon-purple); }
+
+/* Secciones internas de contexto y algoritmos */
+.context-section, .algorithm-section, .form-container {
+    margin-bottom: 25px;
+}
+
+.context-section h3, .algorithm-section h3, .form-container h3 {
+    font-size: 1.1rem;
+    color: var(--text-white);
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 4px;
+}
+
+.context-section p, .algorithm-section p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* Grilla de Análisis Científico Extra */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.analysis-box {
+    background-color: rgba(24, 31, 51, 0.5);
+    border: 1px dashed var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.analysis-box h4 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--text-white);
+}
+
+.analysis-box p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    text-align: justify;
+}
+
+.formula-block {
+    text-align: center;
+    background-color: var(--bg-dark);
+    padding: 8px;
+    border-radius: 4px;
+    margin: 8px 0;
+    color: var(--text-white);
+    font-size: 0.95rem;
+}
+
+/* Cuadro Informativo de la página de Inicio */
+.info-box-general {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.info-box-general h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--neon-cyan);
+    border-bottom: none;
+}
+
+.info-box-general ul {
+    list-style-position: inside;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.info-box-general li {
+    margin-bottom: 8px;
+}
+
+.info-box-general strong {
+    color: var(--text-white);
+}
+
+/* Formularios e Inputs */
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-white);
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Botones con Bordes de Color Sólido Mate */
+.btn-neon {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-fib { border: 2px solid var(--neon-cyan); color: var(--neon-cyan); }
+.btn-fib:hover { background: var(--neon-cyan); color: var(--bg-dark); }
+
+.btn-sec { border: 2px solid var(--neon-purple); color: var(--neon-purple); }
+.btn-sec:hover { background: var(--neon-purple); color: var(--bg-dark); }
+
+.btn-bio { border: 2px solid var(--neon-green); color: var(--neon-green); }
+.btn-bio:hover { background: var(--neon-green); color: var(--bg-dark); }
+
+/* Cajas contenedoras de Resultados Dinámicos */
+.resultado-box {
+    margin-top: 25px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 60px;
+}
+
+.placeholder-text {
+    color: var(--text-gray);
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Estilos de Tablas Dinámicas */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.res-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.res-table th {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.res-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Identificadores de Primalidad y Alertas en Tablas */
+.is-prime-tag { 
+    color: var(--neon-green); 
+    font-weight: bold; 
+}
+
+.not-prime-tag { 
+    color: var(--text-gray); 
+}
+
+/* Footer y Conclusiones */
+.conclusion-card h3 {
+    color: var(--neon-cyan);
+    margin-bottom: 10px;
+}
+
+.conclusion-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+.footer-links {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.link-neon {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+}
+
+/* Control Responsivo */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.5rem; }
+    .nav-menu { flex-direction: column; width: 100%; }
+    .nav-btn { width: 100%; }
+    .card { padding: 15px; }
+    .analysis-grid { grid-template-columns: 1fr; }
+}
